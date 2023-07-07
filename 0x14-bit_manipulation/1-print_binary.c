@@ -6,8 +6,22 @@
  */
 void print_binary(unsigned long int n)
 {
-  if (n > 1)
-    print_binary(n >> 1);
+	int i, numBits = 0;
+	unsigned long int cur;
 
-  _putchar((n & 1) + '0');
+	for (i = 63; i >= 0; i--)
+	{
+		cur = n >> i;
+
+		if (cur & 1)
+		{
+			_putchar('1');
+			numBits++;
+		}
+		else if (numBits)
+			_putchar('0');
+	}
+
+	if (!numBits)
+		_putchar('0');
 }
