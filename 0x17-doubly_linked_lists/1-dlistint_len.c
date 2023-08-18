@@ -1,12 +1,21 @@
 #include "lists.h"
 size_t dlistint_len(const dlistint_t *h)
 {
-	size_t c = 0;
-	const dlistint_t *cur = h;
-	while (cur != NULL)
+	int c;
+
+	c = 0;
+
+	if (h == NULL)
+		return (c);
+
+	while (h->pr != NULL)
+		h = h->pr;
+
+	while (h != NULL)
 	{
 		c++;
-		cur + cur->next;
+		h = h->next;
 	}
+
 	return (c);
 }
