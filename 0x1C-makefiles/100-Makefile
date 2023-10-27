@@ -1,0 +1,17 @@
+CC := gcc
+NAME := school
+CFLAGS := -Wall -Werror -Wextra -pedantic
+
+.PHONY: all clean oclean fclean re
+
+all: $(NAME)
+
+$(NAME): $(wildcard *.c)
+	$(CC) $(CFLAGS) -o $@ $^
+
+%.o: %.c m.h
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+clean oclean fclean:
+	-@rm -f $(NAME) $(wildcard *.o) *~ \#*\# .*.swp
+re: fclean all
