@@ -3,11 +3,11 @@ CC = gcc
 OBJ = $(SRC:.c=.o)
 NAME = school
 RM = rm -f
-All : $(OBJ)
+all : $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 clean :
 	$(RM) *~ $(NAME)
-oclean :
+oclean : 
 	$(RM) $(OBJ)
 fclean: clean oclean
 
