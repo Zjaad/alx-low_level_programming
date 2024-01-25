@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" task n5. """
 
 def island_perimeter(grid):
     """ It returns the perimeter of the island described in grid. """
